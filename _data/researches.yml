@@ -1,0 +1,12 @@
+main:
+    # - # Image
+    #   image_path: https://picsum.photos/720/360
+    #   image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
+    #   alt: "100% free"
+    #   # Title & Excerpt
+    #   title: "Placeholder 2"
+    #   excerpt: "Free to use however you want under the MIT License. Clone it, fork it, customize it... whatever!"
+    #   # Button
+    #   url: "#test-link"
+    #   btn_label: "Read More"
+    #   btn_class: "btn--primary"

@@ -1,4 +1,47 @@
 main:
+    - # Image
+      image_path: https://picsum.photos/720/360
+      image_caption: Weakly Supervised Learning-based Product Detection for Unmanned Store
+      alt: Weakly Supervised Learning-based Product Detection for Unmanned Store
+      # Title & Excerpt
+      title: WSPDUS
+      excerpt: 무인상점을 위한 약지도 학습 기반 상품 검출 (Weakly Supervised Learning-based Product Detection for Unmanned Store)
+      # Button
+      url: https://github.com/CreativeContentLabs/WSPDUS
+      btn_label: "Read More"
+      btn_class: "btn--primary"
+
+    - # Image
+      image_path: https://picsum.photos/720/360
+      # Title & Excerpt
+      title: WSPDUS
+      excerpt: 무인상점을 위한 약지도 학습 기반 상품 검출 (Weakly Supervised Learning-based Product Detection for Unmanned Store)
+      # Button
+      url: https://github.com/CreativeContentLabs/WSPDUS
+      btn_label: "Read More"
+      btn_class: "btn--primary"
+
+    - # Image
+      image_path: https://picsum.photos/720/360
+      image_caption: Weakly Supervised Learning-based Product Detection for Unmanned Store
+      alt: Weakly Supervised Learning-based Product Detection for Unmanned Store
+      # Title & Excerpt
+      title: WSPDUS
+      excerpt: 무인상점을 위한 약지도 학습 기반 상품 검출 (Weakly Supervised Learning-based Product Detection for Unmanned Store)
+
+    - # Image
+      image_path: https://picsum.photos/720/360
+      image_caption: Weakly Supervised Learning-based Product Detection for Unmanned Store
+      alt: Weakly Supervised Learning-based Product Detection for Unmanned Store
+      # Title & Excerpt
+      title: WSPDUS
+      excerpt: 무인상점을 위한 약지도 학습 기반 상품 검출 (Weakly Supervised Learning-based Product Detection for Unmanned Store)
+      # Button
+      url: https://github.com/CreativeContentLabs/WSPDUS
+      btn_label: "Read More"
+      btn_class: "btn--primary"
+
+
     # - # Image
     #   image_path: https://picsum.photos/720/360
     #   image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"

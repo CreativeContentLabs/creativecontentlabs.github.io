@@ -25,16 +25,16 @@ groups:
 > 2023년 2학기 기준
 
 {% for group in page.groups %}
-<table>
+<table style="table-layout: fixed; width: 100%;">
     <thead>
         <tr>
-            <th colspan="3">{{ group.title }}</th>
+            <th colspan="3">{{ group.title }} ({{ group.people.size }}명)</th>
         </tr>
     </thead>
     <tbody>
         {% for person in group.people %}
         <tr>
-            <td rowspan="4"><img src="{{ person.image_url }}"/></td>
+            <td style="width: 180px;" rowspan="4"><img src="{{ person.image_url }}"/></td>
             <td style="text-align: center; font-weight: bold;">성명<br>(Name)</td>
             <td>{{ person.name_ko }} ({{ person.name_en }})</td>
         </tr>

@@ -1,5 +1,4 @@
 ---
-title: Members
 permalink: /people/members/
 groups:
     - title: "석사 과정 (M.S. Courses Students)"

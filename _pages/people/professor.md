@@ -1,5 +1,4 @@
 ---
-title: Professor
 permalink: /people/professor/
 person:
     name_ko: 김종원

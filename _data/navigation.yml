@@ -2,6 +2,9 @@ main:
   - title: Home
     url: /
 
+  - title: About
+    url: /about/
+
   - title: People
     description: People of CCLABS
     url: /people/

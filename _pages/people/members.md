@@ -2,6 +2,24 @@
 title: Members
 permalink: /people/members/
 groups:
+    - title: "석사 과정 (M.S. Courses Students)"
+      people:
+          - name_ko: 배희재
+            name_en: Hee-Jae Bae
+            email: baehj100@naver.com
+            affilation: >-
+                <p>상명대학교 융합전자공학전공</p>
+                <p>석사 진학 예정 (2024)</p>
+            interests: null
+            image_url: /assets/img/default-person-image.png
+          - name_ko: 윤은수
+            name_en: Eunsu Yun
+            email: hkhk0331@gmail.com
+            affilation: >-
+                <p>상명대학교 융합전자공학전공</p>
+                <p>석사 진학 예정 (2024)</p>
+            interests: null
+            image_url: /assets/img/default-person-image.png
     - title: "학사과정 (B.S. Courses Students)"
       people:
         #   - name_ko: 이름

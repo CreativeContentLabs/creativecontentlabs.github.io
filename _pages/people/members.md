@@ -12,6 +12,14 @@ groups:
         #         ...
         #     interests: "..."
         #     image_url: "/assets/img/default-person-image.png"
+          - name_ko: 김동주
+            name_en: Dong Joo Kim
+            email: 202115064@sangmyung.kr
+            affilation: >-
+                <p>상명대학교 융합공과대학 SW융합학부 지능IOT융합전공</p>
+                <p>학사과정 6학기</p>
+            interests: Embedded
+            image_url: /assets/img/default-person-image.png
 ---
 
 > 2023년 2학기 기준

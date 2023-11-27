@@ -2,10 +2,10 @@ main:
   - title: Home
     url: /
 
-  - title: Researches
-    description: Researches of CCLABS
-    url: /researches/
-
   - title: People
     description: People of CCLABS
     url: /people/
+
+  - title: Researches
+    description: Researches of CCLABS
+    url: /researches/

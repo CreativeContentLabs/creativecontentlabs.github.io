@@ -1,4 +1,7 @@
 main:
+  - title: Home
+    url: /
+
   - title: Researches
     description: Researches of CCLABS
     url: /researches/

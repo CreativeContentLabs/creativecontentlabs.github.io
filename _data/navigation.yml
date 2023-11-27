@@ -9,3 +9,6 @@ main:
   - title: Researches
     description: Researches of CCLABS
     url: /researches/
+
+  - title: 관련 기업
+    url: /companies/

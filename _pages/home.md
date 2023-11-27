@@ -1,5 +1,5 @@
 ---
-title: Creative Contents LAB
+title: Creative Content Labs
 layout: splash
 permalink: /
 header:

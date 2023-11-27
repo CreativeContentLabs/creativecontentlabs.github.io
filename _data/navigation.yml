@@ -13,6 +13,9 @@ main:
     description: Researches of CCLABS
     url: /researches/
 
+  - title: Publications
+    url: /publications/
+
   - title: 관련 기업
     url: /companies/
 

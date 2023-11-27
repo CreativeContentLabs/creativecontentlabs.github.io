@@ -1,0 +1,30 @@
+main:
+  - title: Home
+    url: /
+
+  - title: Lab Info.
+    url: /about/
+
+  - title: People
+    description: People of CCLABS
+    url: /people/
+
+  - title: Researches
+    description: Researches of CCLABS
+    url: /researches/
+
+  - title: Publications
+    url: /publications/
+
+  - title: 관련 기업
+    url: /companies/
+
+people:
+  - title: People
+    children:
+      - title: Professor
+        url: /people/professor/
+      - title: Members
+        url: /people/members/
+      - title: Alumni
+        url: /people/alumni/

@@ -57,6 +57,10 @@ plugins:
 
 include:
     - _pages
+    - _people
+
+collections:
+- people
 
 defaults:
     # _pages
@@ -78,13 +82,10 @@ defaults:
           share: true
           related: true
     - scope:
-          path: "_pages/people"
-          type: pages
+          path: ""
+          type: people
       values:
-          layout: single
-          author_profile: false
-          sidebar:
-            nav: people
+          image_url: /assets/img/default-person-image.png
 
 minimal_mistakes_skin: "default"
 masthead_title: "Creative Content Labs"

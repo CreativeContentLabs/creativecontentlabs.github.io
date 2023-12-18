@@ -1,0 +1,27 @@
+---
+permalink: /people/
+layout: single
+---
+
+{% assign pages = site.people | where: "group", "교수" %}
+{% for page in pages %}
+    {% include person.html page=page %}
+{% endfor %}
+
+{% assign pages = site.people | where: "group", "전임연구교수" %}
+{% include people.html title='전임연구교수' collection=pages %}
+
+{% assign pages = site.people | where: "group", "수석연구원" %}
+{% include people.html title='수석연구원' collection=pages %}
+
+{% assign pages = site.people | where: "group", "박사졸업생" %}
+{% include people.html title='박사졸업생' collection=pages %}
+
+{% assign pages = site.people | where: "group", "석사졸업생" %}
+{% include people.html title='석사졸업생' collection=pages %}
+
+{% assign pages = site.people | where: "group", "석사수료생" %}
+{% include people.html title='석사수료생' collection=pages %}
+
+{% assign pages = site.people | where: "group", "학부생" %}
+{% include people.html title='학부생' collection=pages %}

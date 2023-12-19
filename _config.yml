@@ -89,7 +89,7 @@ defaults:
           path: ""
           type: people
       values:
-          image_url: /assets/img/default-person-image.png
+          image_url: /assets/img/people/default.png
     - scope:
           path: ""
           type: researches

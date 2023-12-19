@@ -3,25 +3,47 @@ permalink: /people/
 layout: single
 ---
 
-{% assign pages = site.people | where: "group", "교수" %}
-{% for page in pages %}
-    {% include person.html page=page %}
-{% endfor %}
+<table style="table-layout: fixed; width: 100%;">
+    {% assign pages = site.people | where: "group", "교수" %}
+    <thead>
+        <tr>
+            <th colspan="3">교수 ({{ pages.size }}명)</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for page in pages %}
+            {% include person-full.html page=page %}
 
-{% assign pages = site.people | where: "group", "전임연구교수" %}
-{% include people.html title='전임연구교수' collection=pages %}
+            {% unless forloop.last %}
+            <tr>
+                <td colspan="3"><br></td>
+            </tr>
+            {% endunless %}
+        {% endfor %}
 
-{% assign pages = site.people | where: "group", "수석연구원" %}
-{% include people.html title='수석연구원' collection=pages %}
+        <tr>
+            <td colspan="3"><br><br><br><br><br><br></td>
+        </tr>
+    </tbody>
 
-{% assign pages = site.people | where: "group", "박사졸업생" %}
-{% include people.html title='박사졸업생' collection=pages %}
+    {% assign groups = "수석연구원, 박사졸업생, 석사졸업생, 석사수료생, 학부생" | split: ", " %}
+    {% for group in groups %}
+        {% assign pages = site.people | where: "group", group %}
+        <thead>
+            <tr>
+                <th colspan="3">{{ group }} ({{ pages.size }}명)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for page in pages %}
+                {% include person.html page=page %}
+            {% endfor %}
 
-{% assign pages = site.people | where: "group", "석사졸업생" %}
-{% include people.html title='석사졸업생' collection=pages %}
-
-{% assign pages = site.people | where: "group", "석사수료생" %}
-{% include people.html title='석사수료생' collection=pages %}
-
-{% assign pages = site.people | where: "group", "학부생" %}
-{% include people.html title='학부생' collection=pages %}
+            {% unless forloop.last %}
+            <tr>
+                <td colspan="3"><br><br><br></td>
+            </tr>
+            {% endunless %}
+        </tbody>
+    {% endfor %}
+</table>

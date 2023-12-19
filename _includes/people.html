@@ -1,3 +1,4 @@
+
 <table style="table-layout: fixed; width: 100%;">
     <thead>
         <tr>
@@ -9,7 +10,10 @@
         <tr>
             <td style="width: 180px;" rowspan="4"><img src="{{ page.image_url }}"/></td>
             <td style="text-align: center; font-weight: bold;">성명<br>(Name)</td>
-            <td>{{ page.name_ko }} ({{ page.name_en }})</td>
+            <td>
+                {{ page.name_ko }}
+                {% if page.name_en %}({{ page.name_en }}){% endif %}
+            </td>
         </tr>
         <tr>
             <td style="text-align: center; font-weight: bold;">소속<br>(Affiliation)</td>

@@ -2,6 +2,8 @@
 title: UCI 표준개정 및 UCI 활용 개선방안 연구
 excerpt: 2020.06.4~2020.11.30 UCI 표준개정 및 UCI 활용 개선방안 연구, 한국저작권위원회
 image_path: /assets/img/researches/UCI 표준개정 및 UCI 활용 개선방안 연구/image.png
+start: 2020.06.4
+end: 2020.11.30
 ---
 
 ## 연구목표

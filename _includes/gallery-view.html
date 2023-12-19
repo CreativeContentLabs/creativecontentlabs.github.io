@@ -13,7 +13,7 @@
     <div class="feature__item{% if include.type %}--{{ include.type }}{% endif %}">
         <div class="archive__item">
             {% if page.image_path %}
-            <div class="archive__item-teaser">
+            <div class="archive__item-teaser" style="box-shadow: 0px 1px 8px rgba(0,0,0,0.1);">
                 <img src="{{ page.image_path | relative_url }}" alt="{% if page.alt %}{{ page.alt }}{% endif %}">
                 {% if page.image_caption %}
                 <span class="archive__item-caption">{{ page.image_caption | markdownify | remove: "<p>" | remove: "</p>" }}</span>

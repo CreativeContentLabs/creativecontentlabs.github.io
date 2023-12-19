@@ -1,13 +1,13 @@
 ---
-title: Creative Content Labs
+title: 크리에이티브 콘텐츠 랩 연구소
 layout: splash
 permalink: /
 header:
     overlay_color: "#000"
     overlay_filter: "0.5"
-    overlay_image: https://picsum.photos/1080/200
+    overlay_image: /assets/img/banner.png
 excerpt: >
-    since March 01, 2009
+    (Creative Contents Labs)
 ---
 
 # Researches

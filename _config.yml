@@ -69,14 +69,12 @@ collections:
         output: true
 
 defaults:
-    # _pages
     - scope:
           path: ""
           type: pages
       values:
           layout: single
           author_profile: true
-    # _posts
     - scope:
           path: ""
           type: posts
@@ -92,6 +90,24 @@ defaults:
           type: people
       values:
           image_url: /assets/img/default-person-image.png
+    - scope:
+          path: ""
+          type: researches
+      values:
+          layout: single
+          author_profile: true
+          comments: true
+          related: true
+    - scope:
+          path: ""
+          type: news
+      values:
+          layout: single
+          author_profile: true
+          read_time: true
+          comments: true
+          share: true
+          related: true
 
 minimal_mistakes_skin: "default"
 masthead_title: "Creative Content Labs"

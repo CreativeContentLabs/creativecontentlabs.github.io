@@ -1,4 +1,5 @@
 ---
+title: 2019년 해외 ISD 현황 파악 및 대응방안 수립
 excerpt: 2019.7.24~2019.12.13 2019년 해외 ISD 현황 파악 및 대응방안 수립, 사단법인 저작권해외진흥협회
 image_path: /assets/img/researches/해외 ISD 현황 파악 및 대응방안 수립/image.png
 ---

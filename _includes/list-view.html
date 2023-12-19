@@ -1,0 +1,9 @@
+<h1>{{ include.title }}</h1>
+
+<div class="feature__wrapper">
+    <ul>
+        {% for page in include.pages %}
+        <li>{{ page.title }}</li>
+        {% endfor %}
+    </ul>
+</div>

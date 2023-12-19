@@ -10,7 +10,7 @@
 
 <div class="feature__wrapper">
     <ul>
-        {% for page in include.pages %}
+        {% for page in include.pages | limit: include.limit | default: include.pages.size %}
         <li>{{ page.title }}</li>
         {% endfor %}
     </ul>

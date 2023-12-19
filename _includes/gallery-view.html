@@ -9,7 +9,7 @@
 </h1>
 
 <div class="feature__wrapper">
-    {% for page in include.pages | limit: 3 %}
+    {% for page in include.pages | limit: include.limit | default: include.pages.size %}
     <div class="feature__item{% if include.type %}--{{ include.type }}{% endif %}">
         <div class="archive__item">
             {% if page.image_path %}

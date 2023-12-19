@@ -1,0 +1,42 @@
+<h1 style="position: relative;">
+    {{ include.title }}
+    <span style="font-size: 0.7em; font-weight: normal; opacity: 0.7;">({{ include.pages.size }})</span>
+    {% if include.url %}
+        <p style="position: absolute; top: 0; right: 0; font-size: 0.8em;">
+            <a href="{{ include.url | relative_url }}" class="btn">... {{ site.data.ui-text[site.locale].more_label | default: "More" }}</a>
+        </p>
+    {% endif %}
+</h1>
+
+<div class="feature__wrapper">
+    {% for page in include.pages | limit: include.limit | default: include.pages.size %}
+    <div class="feature__item{% if include.type %}--{{ include.type }}{% endif %}">
+        <div class="archive__item">
+            {% if page.image_path %}
+            <div class="archive__item-teaser" style="box-shadow: 0px 1px 8px rgba(0,0,0,0.1);">
+                <img src="{{ page.image_path | relative_url }}" alt="{% if page.alt %}{{ page.alt }}{% endif %}">
+                {% if page.image_caption %}
+                <span class="archive__item-caption">{{ page.image_caption | markdownify | remove: "<p>" | remove: "</p>" }}</span>
+                {% endif %}
+            </div>
+            {% endif %}
+
+            <div class="archive__item-body">
+                {% if page.title %}
+                <h2 class="archive__item-title">{{ page.title }}</h2>
+                {% endif %}
+
+                {% if page.excerpt %}
+                <div class="archive__item-excerpt">
+                    {{ page.excerpt | markdownify }}
+                </div>
+                {% endif %}
+
+                {% if page.url %}
+                <p><a href="{{ page.url | relative_url }}" class="btn {{ page.btn_class }}">{{ page.btn_label | default: site.data.ui-text[site.locale].more_label | default: "Learn More" }}</a></p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

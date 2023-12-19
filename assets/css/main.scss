@@ -22,3 +22,11 @@ html {
       font-size: 18px;
     }
 }
+
+.sidebar {
+  p,
+  li {
+    font-size: $type-size-5;
+    line-height: 2;
+  }
+}

@@ -18,13 +18,3 @@ main:
 
   - title: 관련 기업
     url: /companies/
-
-people:
-  - title: People
-    children:
-      - title: Professor
-        url: /people/professor/
-      - title: Members
-        url: /people/members/
-      - title: Alumni
-        url: /people/alumni/

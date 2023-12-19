@@ -58,9 +58,11 @@ plugins:
 include:
     - _pages
     - _people
+    - _researches
 
 collections:
 - people
+- researches
 
 defaults:
     # _pages

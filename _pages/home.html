@@ -10,6 +10,8 @@ excerpt: >
     (Creative Contents Labs)
 ---
 
+{% assign ordered_researches = site.researches | sort: "start" | reverse %}
+
 {% include gallery-view.html title='News' pages=site.news url='/news/' limit=3 %}
-{% include gallery-view.html title='Researches' pages=site.researches url='/researches/'  limit=3 %}
+{% include gallery-view.html title='Researches' pages=ordered_researches url='/researches/' limit=3 %}
 {% include list-view.html title='Publications' pages=site.publications url='/publications/' limit=10 %}

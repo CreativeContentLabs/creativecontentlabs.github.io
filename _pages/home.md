@@ -10,6 +10,6 @@ excerpt: >
     (Creative Contents Labs)
 ---
 
-{% include gallery-view.html title='News' pages=site.news %}
-{% include gallery-view.html title='Researches' pages=site.researches %}
-{% include list-view.html title='Publications' pages=site.publications %}
+{% include gallery-view.html title='News' pages=site.news url='/news/' %}
+{% include gallery-view.html title='Researches' pages=site.researches url='/researches/' %}
+{% include list-view.html title='Publications' pages=site.publications url='/publications/' %}

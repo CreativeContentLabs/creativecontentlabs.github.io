@@ -59,10 +59,14 @@ include:
     - _pages
     - _people
     - _researches
+    - _publications
+    - _news
 
 collections:
 - people
 - researches
+- publications
+- news
 
 defaults:
     # _pages

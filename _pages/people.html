@@ -3,5 +3,14 @@ permalink: /people/
 layout: single
 ---
 
-{% assign groups = "교수, 석사재학생, 학부재학생, 전임연구교수, 수석연구원, 박사졸업생, 석사졸업생, 석사수료생" | split: ", " %}
+{% assign year = 2024 %}
+
+<h1 style="margin-top: 1em; margin-bottom: 2em;">{{ year }}년도 CCLABS 활동 구성원</h1>
+
+{% assign groups = "교수, 석사재학생, 학부재학생" | split: ", " %}
+{% include people/table.html groups=groups %}
+
+<h1 style="margin-top: 4em; margin-bottom: 2em;">{{ year | minus: 1 }}년도 이전 CCLABS 구성원</h1>
+
+{% assign groups = "전임연구교수, 수석연구원, 박사졸업생, 석사졸업생, 석사수료생" | split: ", " %}
 {% include people/table.html groups=groups %}

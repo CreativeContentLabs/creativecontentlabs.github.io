@@ -126,10 +126,10 @@ defaults:
       values:
           group: 전임연구교수
     - scope:
-          path: "**/학부생/*"
+          path: "**/학부재학생/*"
           type: people
       values:
-          group: 학부생
+          group: 학부재학생
 
     - scope:
           path: ""

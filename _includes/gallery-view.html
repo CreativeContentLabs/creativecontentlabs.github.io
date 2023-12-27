@@ -8,7 +8,7 @@
     {% endif %}
 </h1>
 
-<div class="feature__wrapper">
+<div class="feature__wrapper" style="margin-bottom: 0; border-bottom: none;">
     {% for page in include.pages | limit: include.limit | default: include.pages.size %}
     <div class="feature__item{% if include.type %}--{{ include.type }}{% endif %}">
         <div class="archive__item">
@@ -19,8 +19,18 @@
                 <span class="archive__item-caption">{{ page.image_caption | markdownify | remove: "<p>" | remove: "</p>" }}</span>
                 {% endif %}
             </div>
+            {% else %}
+            <div class="archive__item-teaser">&nbsp;</div>
             {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
 
+<div class="feature__wrapper">
+    {% for page in include.pages | limit: include.limit | default: include.pages.size %}
+    <div class="feature__item{% if include.type %}--{{ include.type }}{% endif %}">
+        <div class="archive__item">
             <div class="archive__item-body">
                 {% if page.title %}
                 <h2 class="archive__item-title">{{ page.title }}</h2>

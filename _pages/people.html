@@ -3,4 +3,5 @@ permalink: /people/
 layout: single
 ---
 
-{% include people/table.html %}
+{% assign groups = "교수, 석사재학생, 학부재학생, 전임연구교수, 수석연구원, 박사졸업생, 석사졸업생, 석사수료생" | split: ", " %}
+{% include people/table.html groups=groups %}

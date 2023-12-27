@@ -26,7 +26,7 @@ layout: single
         </tr>
     </tbody>
 
-    {% assign groups = "석사재학생, 전임연구교수, 수석연구원, 박사졸업생, 석사졸업생, 석사수료생, 학부재학생" | split: ", " %}
+    {% assign groups = "석사재학생, 학부재학생, 전임연구교수, 수석연구원, 박사졸업생, 석사졸업생, 석사수료생" | split: ", " %}
     {% for group in groups %}
         {% assign pages = site.people | where: "group", group %}
         <thead>

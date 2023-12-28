@@ -1,7 +1,9 @@
 ---
-title: '크리에이티브 콘텐츠 랩 연구소 (Creative Contents Labs)'
+title: '크리에이티브 콘텐츠 랩 연구소'
 permalink: /about/
 ---
+
+Creative Contents Labs
 
 ![](/assets/img/banner.png)
 

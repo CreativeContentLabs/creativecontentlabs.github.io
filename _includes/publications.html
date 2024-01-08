@@ -1,0 +1,38 @@
+{% assign title = 'Publications' %}
+{% assign pages = site.publications %}
+{% assign url = '/publications/' %}
+
+<h1 style="position: relative;">
+    {{ title }}
+    <span style="font-size: 0.7em; font-weight: normal; opacity: 0.7;">({{ pages.size }})</span>
+    {% if include.more %}
+        <p style="position: absolute; top: 0; right: 0; font-size: 0.8em;">
+            <a href="{{ url | relative_url }}" class="btn">... {{ site.data.ui-text[site.locale].more_label | default: "More" }}</a>
+        </p>
+    {% endif %}
+</h1>
+
+<div class="feature__wrapper">
+    <ul>
+        {% for page in pages | limit: include.limit | default: pages.size %}
+        <li>
+            <div>
+                {% if page.doi %}
+                <a href="{{ page.doi }}" style="color: inherit; text-decoration: underline;">{{ page.title }}</a>
+                {% else %}
+                {{ page.title }}
+                {% endif %}
+            </div>
+            {% if page.content %}
+            <div style="opacity: 0.5;">
+                {{ page.content }}
+            </div>
+            {% endif %}
+        </li>
+        {% endfor %}
+
+        {% if pages.size > include.limit %}
+        <li>...</li>
+        {% endif %}
+    </ul>
+</div>

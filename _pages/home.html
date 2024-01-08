@@ -16,5 +16,4 @@ excerpt: >
 {% assign pages = site.researches | sort: "start" | reverse %}
 {% include gallery-view.html title='Researches' pages=pages url='/researches/' limit=3 %}
 
-{% assign pages = site.publications %}
-{% include list-view.html title='Publications' pages=pages url='/publications/' limit=10 %}
+{% include publications.html limit=10 more=true %}

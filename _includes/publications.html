@@ -18,7 +18,7 @@
         <li>
             <div>
                 {% if page.doi %}
-                <a href="{{ page.doi }}" style="color: inherit; text-decoration: underline;">{{ page.title }}</a>
+                <a href="{{ page.doi }}" target="_blank" style="color: inherit; text-decoration: underline;">{{ page.title }}</a>
                 {% else %}
                 {{ page.title }}
                 {% endif %}

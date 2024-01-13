@@ -1,5 +1,5 @@
 {% assign title = 'Publications' %}
-{% assign pages = site.publications %}
+{% assign pages = site.publications | sort: "date" | reverse %}
 {% assign url = '/publications/' %}
 
 <h1 style="position: relative;">

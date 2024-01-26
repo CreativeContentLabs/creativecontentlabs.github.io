@@ -1,6 +1,0 @@
-<table style="table-layout: fixed; width: 100%;">
-    {% for group in include.groups %}
-        {% assign pages = site.people | where: "group", group %}
-        {% include people/table-body.html label=group pages=pages %}
-    {% endfor %}
-</table>

@@ -30,3 +30,8 @@ html {
     line-height: 2;
   }
 }
+
+// Follow 버튼 없에기
+.author__urls-wrapper .btn--inverse {
+  display: none;
+}

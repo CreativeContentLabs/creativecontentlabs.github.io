@@ -1,8 +1,0 @@
----
-image_url: /assets/img/people/김예진.jpg
-name_ko: 김예진
-name_en: Ruichen Jin
-email: jinruichen@cclabs.kr
-affilation: >-
-    아몽솔루션 기업부설연구소 연구소장
----

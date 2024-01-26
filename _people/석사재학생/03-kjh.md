@@ -1,7 +1,0 @@
----
-# image_url:
-name_ko: 강재하
-# name_en:
-email: jhkang3457@gmail.com
-affilation: 상명대학교 컴퓨터과학과 1학기
----

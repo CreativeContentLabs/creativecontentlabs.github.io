@@ -6,9 +6,12 @@ header:
     overlay_color: "#000"
     overlay_filter: "0.5"
     overlay_image: /assets/img/banner.png
-excerpt: >
-    (Creative Contents Labs)
 ---
+
+<p><b>상명대학교 크리에이티브 콘텐츠 랩 연구소에 오신 것을 환영합니다.</b></p>
+<p>Welcome to Creative Contents Labs.</p>
+
+<!-- more -->
 
 {% assign pages = site.news | sort: "date" | reverse %}
 {% include gallery-view.html title='News' pages=pages url='/news/' limit=3 %}
@@ -16,5 +19,4 @@ excerpt: >
 {% assign pages = site.researches | sort: "start" | reverse %}
 {% include gallery-view.html title='Researches' pages=pages url='/researches/' limit=3 %}
 
-{% assign pages = site.publications %}
-{% include list-view.html title='Publications' pages=pages url='/publications/' limit=10 %}
+{% include publications.html limit=10 more=true %}

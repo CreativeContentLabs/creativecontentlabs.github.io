@@ -42,8 +42,8 @@ plugins:
 #
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
-#
-# exclude:
+
+exclude:
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
@@ -54,6 +54,7 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+  - '**/template.md'
 
 include:
     - _pages
@@ -61,8 +62,6 @@ include:
 collections:
     news:
         output: true
-    people:
-        output: false
     publications:
         output: false
     researches:
@@ -85,52 +84,6 @@ defaults:
           comments: true
           share: true
           related: true
-    - scope:
-          path: ""
-          type: people
-      values:
-          image_url: /assets/img/people/default.png
-    - scope:
-          path: "**/교수/*"
-          type: people
-      values:
-          group: 교수
-    - scope:
-          path: "**/박사졸업생/*"
-          type: people
-      values:
-          group: 박사졸업생
-    - scope:
-          path: "**/석사수료생/*"
-          type: people
-      values:
-          group: 석사수료생
-    - scope:
-          path: "**/석사재학생/*"
-          type: people
-      values:
-          group: 석사재학생
-    - scope:
-          path: "**/석사졸업생/*"
-          type: people
-      values:
-          group: 석사졸업생
-    - scope:
-          path: "**/수석연구원/*"
-          type: people
-      values:
-          group: 수석연구원
-    - scope:
-          path: "**/전임연구교수/*"
-          type: people
-      values:
-          group: 전임연구교수
-    - scope:
-          path: "**/학부재학생/*"
-          type: people
-      values:
-          group: 학부재학생
-
     - scope:
           path: ""
           type: researches

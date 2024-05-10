@@ -1,0 +1,29 @@
+<!--
+    Parameters:
+    - doi: DOI url
+    - title: title
+    - author: authors in markdown language
+    - journal: where the publication cna be found.
+    - date: date
+ -->
+
+<li>
+    <div>
+        <span style="opacity: 0.5;">
+            {{ include.author }}
+        </span>
+        <span style="opacity: 0.9;">
+            "{{ include.title }}"
+        </span>
+        <span style="opacity: 0.5;">
+            {{ include.journal }}
+        </span>
+        {% if include.doi %}
+        <span>
+            <a href="{{ include.doi }}" target="_blank">
+            <button type="button" class="btn btn--inverse">DOI</button>
+            </a>
+        </span>
+        {% endif %}
+    </div>
+</li>

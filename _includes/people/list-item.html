@@ -40,5 +40,13 @@
                 {% endif %}
             </td>
         </tr>
+        <tr>
+            <td style="text-align: center; font-weight: bold;">현재 연구 내용(분야)<br>(Current Research)</td>
+            <td>
+                {% if include.current_research %}
+                {{ include.current_research }}
+                {% endif %}
+            </td>
+        </tr>
     </tbody>
 </table>

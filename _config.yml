@@ -60,11 +60,11 @@ include:
     - _pages
 
 collections:
+    notice_board:
+        output: true
     publications:
         output: false
     researches:
-        output: true
-    notice_board:
         output: true
 
 defaults:

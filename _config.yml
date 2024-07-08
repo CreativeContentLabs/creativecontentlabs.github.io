@@ -60,11 +60,11 @@ include:
     - _pages
 
 collections:
-    news:
-        output: true
     publications:
         output: false
     researches:
+        output: true
+    notice_board:
         output: true
 
 defaults:
@@ -94,7 +94,7 @@ defaults:
           related: true
     - scope:
           path: ""
-          type: news
+          type: notice_board
       values:
           layout: single
           author_profile: true

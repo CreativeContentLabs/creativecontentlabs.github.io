@@ -17,6 +17,4 @@ header:
 {% include gallery-view.html title='News' pages=pages url='/news/' limit=3 %}
 
 {% assign pages = site.researches | sort: "start" | reverse %}
-{% include gallery-view.html title='Researches' pages=pages url='/researches/' limit=3 %}
-
-{% include publications.html limit=10 more=true %}
+{% include gallery-view.html title='Current Researches' pages=pages url='/researches/' limit=3 %}

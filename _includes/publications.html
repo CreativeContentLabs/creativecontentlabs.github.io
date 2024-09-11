@@ -31,7 +31,7 @@
                 <ul>
                     {% for publication in year_group.items %}
                     <li data-type="{{ category_group.name | downcase }}">
-                        <a href="{{ publication.doi | default: '#' }}" target="_blank">{{ publication.title }}</a>
+                        <a href="{{ publication.doi | default: '#' }}" target="_blank" style="color: black;">{{ publication.title }}</a>
                         <div style="opacity: 0.5;">{{ publication.excerpt | default: publication.content }}</div>
                     </li>
                     {% endfor %}

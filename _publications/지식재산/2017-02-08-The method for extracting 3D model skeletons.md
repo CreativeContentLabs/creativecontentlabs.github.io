@@ -1,6 +1,9 @@
 ---
 title: 3D 모델 골격 추출 방법 및 장치(The method for extracting 3D model skeletons)
 doi: https://doi.org/10.8080/1020170017581
+date: 2017-02-08
+category: patent
+
 ---
 
 <!--

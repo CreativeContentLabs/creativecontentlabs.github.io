@@ -1,6 +1,9 @@
 ---
 title: 3D Model Identification Using the Dice-Shape Flat Pattern
 doi: http://doi.org/10.18178/ijke.2016.2.1.048
+date: 2016-03-01
+category: patent
+
 ---
 
 <!--

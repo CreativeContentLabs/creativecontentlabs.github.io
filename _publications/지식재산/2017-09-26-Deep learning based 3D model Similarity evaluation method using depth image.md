@@ -1,6 +1,9 @@
 ---
 title: 3D 모델 깊이 이미지를 이용한 딥러닝 기반의 3D 모델 유사성 판단 방법(Deep learning based 3D model Similarity evaluation method using depth image)
 doi: https://doi.org/10.8080/1020170124032
+date: 2017-09-26
+category: patent
+
 ---
 
 <!--

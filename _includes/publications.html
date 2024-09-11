@@ -1,38 +1,22 @@
-{% assign title = 'Publications' %}
-{% assign pages = site.publications | sort: "date" | reverse %}
-{% assign url = '/publications/' %}
+{% assign grouped_by_category = site.publications | group_by: "category" %}
 
-<h1 style="position: relative;">
-    {{ title }}
-    <span style="font-size: 0.7em; font-weight: normal; opacity: 0.7;">({{ pages.size }})</span>
-    {% if include.more %}
-        <p style="position: absolute; top: 0; right: 0; font-size: 0.8em;">
-            <a href="{{ url | relative_url }}" class="btn">... {{ site.data.ui-text[site.locale].more_label | default: "More" }}</a>
-        </p>
-    {% endif %}
-</h1>
+<div class="publications">
+    {% for category_group in grouped_by_category %}
+    <h2>{{ category_group.name }}</h2> <!-- 카테고리 제목 -->
 
-<div class="feature__wrapper">
+    {% assign grouped_by_year = category_group.items | group_by_exp: "item", "item.date | date: '%Y'" %}
+
+    {% for year_group in grouped_by_year %}
+    <h3>{{ year_group.name }}</h3> <!-- 연도 제목 -->
+
     <ul>
-        {% for page in pages | limit: include.limit | default: pages.size %}
+        {% for publication in year_group.items %}
         <li>
-            <div>
-                {% if page.doi %}
-                <a href="{{ page.doi }}" target="_blank" style="color: inherit; text-decoration: underline;">{{ page.title }}</a>
-                {% else %}
-                {{ page.title }}
-                {% endif %}
-            </div>
-            {% if page.content %}
-            <div style="opacity: 0.5;">
-                {{ page.content }}
-            </div>
-            {% endif %}
+            <a href="{{ publication.doi | default: '#' }}" target="_blank">{{ publication.title }}</a>
+            <div style="opacity: 0.5;">{{ publication.excerpt | default: publication.content }}</div>
         </li>
         {% endfor %}
-
-        {% if pages.size > include.limit %}
-        <li>...</li>
-        {% endif %}
     </ul>
+    {% endfor %}
+    {% endfor %}
 </div>

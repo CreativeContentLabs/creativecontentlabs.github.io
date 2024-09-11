@@ -1,6 +1,9 @@
 ---
 title: 3D 메쉬 모델의 기술자 생성 방법 및 포즈 변형된 3D 메쉬 모델 인식 방법(A Method For Generating A Discriptor Of 3D Mesh Model And A Method For identifying a Pose-Transformed 3D Mesh Model)
 doi: https://doi.org/10.8080/1020160097751
+date: 2016-08-01
+category: patent
+
 ---
 
 <!--

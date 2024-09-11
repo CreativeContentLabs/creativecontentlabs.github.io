@@ -1,6 +1,9 @@
 ---
 title: 3D Model Identification Using Weighted Implicit Shape Representation and Panoramic View
 doi: https://doi.org/10.3390/app7080764
+date: 2017-07-01
+category: patent
+
 ---
 
 <!--

@@ -1,6 +1,9 @@
 ---
 title: 인공지능 심층학습 기반의 영상물 인식 시스템 및 방법(Artificial intelligence deep-learning based video object recognition system and method)
 doi: https://doi.org/10.8080/1020180004164
+date: 2018-01-12
+category: patent
+
 ---
 
 <!--

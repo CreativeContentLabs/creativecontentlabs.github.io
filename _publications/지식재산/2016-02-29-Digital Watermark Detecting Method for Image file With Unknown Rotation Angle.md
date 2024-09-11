@@ -1,6 +1,9 @@
 ---
 title: 회전각도를 모르는 이미지 파일의 워터마크 검출 방법(Digital Watermark Detecting Method for Image file With Unknown Rotation Angle)
 doi: https://doi.org/10.8080/1020160023868
+date: 2016-02-29
+category: patent
+
 ---
 
 <!--

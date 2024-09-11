@@ -1,6 +1,9 @@
 ---
 title: 딥러닝 기술과 이미지 특징 추출 기술을 결합한 영상물 내 미술품 인식 방법(Method for recognizing art objects in video combining deep learning technology and image feature extraction technology)
 doi: https://doi.org/10.8080/1020180009129
+date: 2018-01-25
+category: patent
+
 ---
 
 <!--

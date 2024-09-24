@@ -1,3 +1,24 @@
+<style>
+    .archive__item-teaser img {
+        width: 100%;
+        height: auto;
+    }
+    .archive__item-teaser img {
+            box-shadow: none;
+        }
+
+    /* 모바일 화면에서만 적용 */
+    @media screen and (max-width: 768px) {
+        .archive__item-teaser {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .archive__item-teaser img {
+            box-shadow: none;
+        }
+    }
+</style>
 <h1 style="position: relative;">
     {{ include.title }}
     <span style="font-size: 0.7em; font-weight: normal; opacity: 0.7;">({{ include.pages.size }})</span>
@@ -11,7 +32,7 @@
 <div class="feature__wrapper" style="margin-bottom: 0; border-bottom: none;">
     {% for page in include.pages | limit: include.limit | default: include.pages.size %}
     <div class="feature__item{% if include.type %}--{{ include.type }}{% endif %}">
-        <div class="archive__item">
+        <div class="archive__item" >
             {% if page.image_path %}
             <div class="archive__item-teaser" style="box-shadow: 0px 1px 8px rgba(0,0,0,0.1);">
                 <img src="{{ page.image_path | relative_url }}" alt="{% if page.alt %}{{ page.alt }}{% endif %}">

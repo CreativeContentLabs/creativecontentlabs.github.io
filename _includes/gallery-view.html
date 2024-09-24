@@ -1,51 +1,134 @@
+<style>
+    .archive__item-teaser img {
+    width: 100%;
+    object-fit: cover;
+    /* 이미지가 일정한 비율로 채워지도록 */
+}
+
+/* 카드 전체에 대한 스타일 */
+.card {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 100%;
+    height: auto; /* 카드 높이를 자동으로 맞춤 */
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 이미지 고정 비율 설정 */
+.card-image {
+    width: 100%;
+    height: 200px; /* 고정된 이미지 높이 */
+    background-color: #f0f0f0; /* 이미지가 없을 경우 배경색 설정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 이미지가 고정된 크기에 맞춰 잘리더라도 비율 유지 */
+}
+
+/* 텍스트 영역 스타일 */
+.card-content {
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.card-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.card-excerpt {
+    font-size: 1em;
+    margin-bottom: 10px;
+    flex-grow: 1;
+    /* 텍스트 내용이 일정 높이를 유지하게끔 설정 */
+}
+
+/* 모바일 화면에서만 적용 */
+@media screen and (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+
+    .card-title {
+        font-size: 1.1em;
+    }
+
+    .card-excerpt {
+        font-size: 0.9em;
+    }
+}
+
+/* 큰 화면에서 두 개씩 정렬 */
+@media screen and (min-width: 769px) {
+    .feature__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .card {
+        width: 48%;
+    }
+}
+
+/* 아주 큰 화면에서 세 개씩 정렬 */
+@media screen and (min-width: 1200px) {
+    .card {
+        width: 31%;
+    }
+}
+
+</style>
 <h1 style="position: relative;">
     {{ include.title }}
     <span style="font-size: 0.7em; font-weight: normal; opacity: 0.7;">({{ include.pages.size }})</span>
     {% if include.url %}
-        <p style="position: absolute; top: 0; right: 0; font-size: 0.8em;">
-            <a href="{{ include.url | relative_url }}" class="btn">... {{ site.data.ui-text[site.locale].more_label | default: "More" }}</a>
-        </p>
+    <p style="position: absolute; top: 0; right: 0; font-size: 0.8em;">
+        <a href="{{ include.url | relative_url }}" class="btn">... {{ site.data.ui-text[site.locale].more_label |
+            default: "More" }}</a>
+    </p>
     {% endif %}
 </h1>
 
-<div class="feature__wrapper" style="margin-bottom: 0; border-bottom: none;">
-    {% for page in include.pages | limit: include.limit | default: include.pages.size %}
-    <div class="feature__item{% if include.type %}--{{ include.type }}{% endif %}">
-        <div class="archive__item">
-            {% if page.image_path %}
-            <div class="archive__item-teaser" style="box-shadow: 0px 1px 8px rgba(0,0,0,0.1);">
-                <img src="{{ page.image_path | relative_url }}" alt="{% if page.alt %}{{ page.alt }}{% endif %}">
-                {% if page.image_caption %}
-                <span class="archive__item-caption">{{ page.image_caption | markdownify | remove: "<p>" | remove: "</p>" }}</span>
-                {% endif %}
-            </div>
-            {% else %}
-            <div class="archive__item-teaser">&nbsp;</div>
-            {% endif %}
-        </div>
-    </div>
-    {% endfor %}
-</div>
-
 <div class="feature__wrapper">
     {% for page in include.pages | limit: include.limit | default: include.pages.size %}
-    <div class="feature__item{% if include.type %}--{{ include.type }}{% endif %}">
-        <div class="archive__item">
-            <div class="archive__item-body">
-                {% if page.title %}
-                <h2 class="archive__item-title">{{ page.title }}</h2>
-                {% endif %}
+    <div class="card">
+        {% if page.image_path %}
+        <div class="card-image">
+            <img src="{{ page.image_path | relative_url }}" alt="{% if page.alt %}{{ page.alt }}{% endif %}">
+        </div>
+        {% endif %}
 
-                {% if page.excerpt %}
-                <div class="archive__item-excerpt">
-                    {{ page.excerpt | markdownify }}
-                </div>
-                {% endif %}
-
-                {% if page.url %}
-                <p><a href="{{ page.url | relative_url }}" class="btn {{ page.btn_class }}">{{ page.btn_label | default: site.data.ui-text[site.locale].more_label | default: "Learn More" }}</a></p>
-                {% endif %}
+        <div class="card-content">
+            {% if page.title %}
+            <h2 class="card-title">{{ page.title }}</h2>
+            {% endif %}
+            <!-- {% if page.date %}
+            <div class="card-excerpt">
+                {{ page.start | markdownify }}~{{ page.start | markdownify }}       
             </div>
+            {% endif %} -->
+            {% if page.excerpt %}
+            <div class="card-excerpt">
+                {{ page.excerpt | markdownify }}
+            </div>
+            {% endif %}
+
+            {% if page.url %}
+            <p><a href="{{ page.url | relative_url }}" class="btn {{ page.btn_class }}">{{ page.btn_label | default:
+                    site.data.ui-text[site.locale].more_label | default: "Learn More" }}</a></p>
+            {% endif %}
         </div>
     </div>
     {% endfor %}

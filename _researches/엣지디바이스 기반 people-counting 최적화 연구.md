@@ -1,5 +1,5 @@
 ---
-title: 엣지디바이스 기반 people-counting 최적화 연구,가천대학교,five works
+title: 2024.3.1~2024.5.31, 엣지디바이스 기반 people-counting 최적화 연구,딥인사이트
 excerpt: 2024.3.1~2024.5.31, 엣지디바이스 기반 people-counting 최적화 연구,딥인사이트
 image_path: /assets/img/researches/엣지디바이스 기반 people-counting 최적화 연구/엣지디바이스 기반 people-counting 최적화 연구.png
 start: 2024.04.01

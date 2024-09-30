@@ -13,8 +13,19 @@ header:
 
 <!-- more -->
 
-{% assign pages = site.news | sort: "date" | reverse %}
-{% include gallery-view.html title='News' pages=pages url='/news/' limit=3 %}
+{% assign sorted_pages = site.board | sort: "date" | reverse %}
+{% include gallery-view.html title='Board' pages=sorted_pages url='/board/' limit=3 %}
 
-{% assign pages = site.researches | sort: "start" | reverse %}
-{% include gallery-view.html title='Current Researches' pages=pages url='/researches/' limit=8 %}
+<!--research-->
+{% assign ongoing_pages = site.researches | where: "ongoing", true %}
+{% assign other_pages = site.researches | where: "ongoing", false %}
+
+<!-- 진행 중인 항목을 start 순으로 정렬 -->
+{% assign ongoing_pages = ongoing_pages | sort: "start" | reverse %}
+
+<!-- 완료된 항목을 start 순으로 정렬 -->
+{% assign other_pages = other_pages | sort: "end" | reverse %}
+
+<!-- 두 리스트를 합쳐서 표시 -->
+{% assign sorted_pages = ongoing_pages | concat: other_pages %}
+{% include gallery-view.html title='Current Researches' pages=sorted_pages url='/researches/' limit=6 %}

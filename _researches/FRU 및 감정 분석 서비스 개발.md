@@ -4,16 +4,17 @@ excerpt: 2024.9.19~진행중 FRU 및 감정 분석 서비스 개발, 딥인사�
 image_path: /assets/img/researches/FRU 및 감정 분석 서비스 개발/image.png
 start: 2024.09.19
 end: 진행중
+ongoing: true
 ---
 
 2020.9.1~2023.2.28 FRU 및 감정 분석 서비스 개발, 딥인사이트
 
 ## 연구목표
-"- FRU 및 감정분석 서비스 개발
+- FRU 및 감정분석 서비스 개발
     - CatchCam에서 구동되는 Face Detector (얼굴 탐지 모델) 개발
     - CatchCam에서 구동되는 Identification AI 개발
     - 감정분석 AI 모델 개발
-- CatchCam을 사용한 실시간 데모를 통해 사용자 구별, 감정인식 진행"
+- CatchCam을 사용한 실시간 데모를 통해 사용자 구별, 감정인식 진행
 
 ## 연구방법
 1. 데이터셋 분석 및 전처리

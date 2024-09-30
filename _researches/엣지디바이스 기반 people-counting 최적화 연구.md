@@ -1,9 +1,10 @@
 ---
-title: 2024.3.1~2024.5.31, 엣지디바이스 기반 people-counting 최적화 연구,딥인사이트
-excerpt: 2024.3.1~2024.5.31, 엣지디바이스 기반 people-counting 최적화 연구,딥인사이트
+title: 2024.3.1~진행중, 엣지디바이스 기반 people-counting 최적화 연구,딥인사이트
+excerpt: 2024.3.1~진행중, 엣지디바이스 기반 people-counting 최적화 연구,딥인사이트
 image_path: /assets/img/researches/엣지디바이스 기반 people-counting 최적화 연구/엣지디바이스 기반 people-counting 최적화 연구.png
 start: 2024.04.01
 end: 진행중
+ongoing: true
 ---
 
 ## 연구목표

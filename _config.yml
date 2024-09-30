@@ -60,7 +60,7 @@ include:
     - _pages
 
 collections:
-    news:
+    board:
         output: true
     publications:
         output: false
@@ -94,7 +94,7 @@ defaults:
           related: true
     - scope:
           path: ""
-          type: news
+          type: board
       values:
           layout: single
           author_profile: true

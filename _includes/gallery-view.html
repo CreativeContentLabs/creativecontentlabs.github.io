@@ -103,7 +103,7 @@
 </h1>
 
 <div class="feature__wrapper">
-    {% for page in include.pages | limit: include.limit | default: include.pages.size %}
+    {% for page in sorted_pages %}
     <div class="card">
         {% if page.image_path %}
         <div class="card-image">
@@ -115,11 +115,7 @@
             {% if page.title %}
             <h2 class="card-title">{{ page.title }}</h2>
             {% endif %}
-            <!-- {% if page.date %}
-            <div class="card-excerpt">
-                {{ page.start | markdownify }}~{{ page.start | markdownify }}       
-            </div>
-            {% endif %} -->
+
             {% if page.excerpt %}
             <div class="card-excerpt">
                 {{ page.excerpt | markdownify }}
@@ -128,7 +124,7 @@
 
             {% if page.url %}
             <p><a href="{{ page.url | relative_url }}" class="btn {{ page.btn_class }}">{{ page.btn_label | default:
-                    site.data.ui-text[site.locale].more_label | default: "Learn More" }}</a></p>
+                    "Learn More" }}</a></p>
             {% endif %}
         </div>
     </div>

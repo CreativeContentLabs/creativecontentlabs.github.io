@@ -1,7 +1,7 @@
 ---
 title: PC-Mythic 환경 기반 지폐인식 및 fitness 딥러닝 알고리즘 기초연구
 excerpt: 2024.09.19~진행중 환경 기반 지폐인식 및 fitness 딥러닝 알고리즘 기초연구, 현대 MIB, 파이브웍스 #연도 제목 기관
-image_path: /assets/img/researches/환경 기반 지폐인식 및 fitness 딥러닝 알고리즘 기초연구/image.png #연구 제목
+image_path: /assets/img/researches/PC-Mythic 환경 기반 지폐인식 및 fitness 딥러닝 알고리즘 기초연구/image.png #연구 제목
 start: 2024.0.19
 end: 진행중
 ongoing: true
@@ -27,5 +27,5 @@ ongoing: true
 (Jetson Nano & PC-Mythic)
 
 
-![](/assets/img/researches/환경 기반 지폐인식 및 fitness 딥러닝 알고리즘 기초연구/image.png)
+![](/assets/img/researches/PC-Mythic 환경 기반 지폐인식 및 fitness 딥러닝 알고리즘 기초연구/image.png)
  

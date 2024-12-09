@@ -22,9 +22,6 @@ header:
 <!-- 진행 중인 항목을 start 순으로 정렬 -->
 {% assign ongoing_pages = ongoing_pages | sort: "start" | reverse %}
 
-<!-- <!-- 완료된 항목을 start 순으로 정렬 -->
-{% assign other_pages = other_pages | sort: "end" | reverse %} -->
-
 <!-- 두 리스트를 합쳐서 표시 -->
 {% assign sorted_pages = ongoing_pages | concat: other_pages %}
 {% include gallery-view.html title='Current Researches' pages=sorted_pages url='/researches/' limit=6 %}

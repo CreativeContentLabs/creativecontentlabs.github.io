@@ -7,14 +7,11 @@ header:
     overlay_filter: "0.5"
     overlay_image: /assets/img/banner.png
 ---
-
-<p><b>상명대학교 크리에이티브 콘텐츠 랩 연구소에 오신 것을 환영합니다.</b></p>
+<p><b>상명대학교 크리에이티브 콘텐츠 랩 연구소(CCLabs)는 신호 및 이미지 처리와 딥러닝을 중심으로 인공지능 연구를 활발히 진행하고 있으며, 
+최근 엣지보드 기반의 딥러닝 기술 개발 연구에 중점을 두고 있습니다. 또한 다양한 산업과 협업하여 AI기술을 실제 응용으로 발전시키며, 학문적 기여와 실용적 성과를 동시에 추구하고 있습니다.</b></p>
 <p>Welcome to Creative Contents Labs.</p>
 
 <!-- more -->
-
-{% assign sorted_pages = site.board | sort: "date" | reverse %}
-{% include gallery-view.html title='Board' pages=sorted_pages url='/board/' limit=3 %}
 
 <!--research-->
 {% assign ongoing_pages = site.researches | where: "ongoing", true %}
@@ -29,3 +26,6 @@ header:
 <!-- 두 리스트를 합쳐서 표시 -->
 {% assign sorted_pages = ongoing_pages | concat: other_pages %}
 {% include gallery-view.html title='Current Researches' pages=sorted_pages url='/researches/' limit=6 %}
+
+{% assign sorted_pages = site.board | sort: "date" | reverse %}
+{% include gallery-view.html title='Board' pages=sorted_pages url='/board/' limit=3 %}

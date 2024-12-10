@@ -1,0 +1,123 @@
+<h1>연구 프로젝트</h1>
+
+<!-- 필터링 Select Box -->
+<div class="research-filter" style="display: flex; justify-content: flex-end; gap: 10px; margin-bottom: 20px;">
+    <label for="status-select" style="font-weight: bold; margin-right: 5px;">상태:</label>
+    <select id="status-select">
+        <option value="all">전체</option>
+        <option value="ongoing">진행중</option>
+        <option value="completed">완료됨</option>
+    </select>
+</div>
+
+<!-- 연구 프로젝트 목록 -->
+<div id="research-container">
+    {% assign ongoing_projects = site.researches | where: "end", "진행중" | sort: "start" %}
+    {% assign completed_projects = site.researches | where_exp: "item", "item.end != '진행중'" | sort: "start" | reverse %}
+
+    <!-- 진행중 프로젝트 -->
+    <div class="research-group ongoing">
+        <h2 class="group-title">진행중</h2>
+        <ul>
+            {% for project in ongoing_projects %}
+            <li class="research-item" data-status="ongoing">
+                <a href="{{ project.url | relative_url }}">
+                    <strong>{{ project.title }}</strong> <br>
+                    <span>기간: {{ project.start }} ~ {{ project.end }}</span> <br>
+                    <span>{{ project.excerpt }}</span>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- 완료된 프로젝트 -->
+    <div class="research-group completed" style="display: none;">
+        <h2 class="group-title">완료됨</h2>
+        <ul>
+            {% for project in completed_projects %}
+            <li class="research-item" data-status="completed">
+                <a href="{{ project.url | relative_url }}">
+                    <strong>{{ project.title }}</strong> <br>
+                    <span>기간: {{ project.start }} ~ {{ project.end }}</span> <br>
+                    <span>{{ project.excerpt }}</span>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const statusSelect = document.getElementById("status-select");
+
+        // Event listener for status select box
+        statusSelect.addEventListener("change", function () {
+            const selectedStatus = statusSelect.value;
+            filterResearches(selectedStatus);
+        });
+
+        function filterResearches(status) {
+            const researchGroups = document.querySelectorAll(".research-group");
+            researchGroups.forEach(group => {
+                const items = group.querySelectorAll(".research-item");
+                const title = group.querySelector(".group-title");
+
+                // Check if any items in the group match the filter
+                const hasVisibleItems = Array.from(items).some(item => {
+                    return item.dataset.status === status || status === "all";
+                });
+
+                // Show or hide the group and its title based on the filter
+                group.style.display = hasVisibleItems ? "" : "none";
+                if (title) title.style.display = hasVisibleItems ? "" : "none";
+            });
+        }
+
+        // Initial rendering
+        filterResearches("all");
+    });
+</script>
+
+<style>
+    .research-item > a {
+        color: black;
+        text-decoration: none;
+        display: block; /* Block으로 처리해 li 전체가 클릭 가능 */
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .research-item > a:hover {
+        background-color: #f9f9f9;
+        text-decoration: underline;
+    }
+
+    .research-filter {
+        margin-bottom: 20px;
+    }
+
+    .research-group {
+        margin-bottom: 30px;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .research-item {
+        margin-bottom: 15px;
+    }
+
+    .research-item strong {
+        font-size: 16px;
+    }
+
+    .research-item span {
+        display: block;
+        font-size: 14px;
+        color: #666;
+    }
+</style>

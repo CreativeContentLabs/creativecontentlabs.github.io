@@ -2,7 +2,7 @@
 title : FRU 및 감정 분석 서비스 개발
 excerpt: 2024.9.19~진행중 FRU 및 감정 분석 서비스 개발, 딥인사이트
 image_path: /assets/img/researches/FRU 및 감정 분석 서비스 개발/image.png
-start: 2024.09.19
+start: 2024-09-19
 end: 진행중
 ongoing: true
 ---

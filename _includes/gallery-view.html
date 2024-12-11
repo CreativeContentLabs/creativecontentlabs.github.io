@@ -94,7 +94,7 @@
 </style>
 <h1 style="position: relative;">
     {{ include.title }}
-    <span style="font-size: 0.7em; font-weight: normal; opacity: 0.7;">({{ include.pages.size }})</span>
+    <span style="font-size: 0.7em; font-weight: normal; opacity: 0.7;">({{ include.limit }})</span>
     {% if include.url %}
     <p style="position: absolute; top: 0; right: 0; font-size: 0.8em;">
         <a href="{{ include.url | relative_url }}" class="btn">... {{ site.data.ui-text[site.locale].more_label |
@@ -104,11 +104,15 @@
 </h1>
 
 <div class="feature__wrapper">
-    {% for page in sorted_pages %}
+    {% assign limited_pages = sorted_pages %}
+    {% if include.limit %}
+        {% assign limited_pages = sorted_pages | slice: 0, include.limit %}
+    {% endif %}
+    {% for page in limited_pages %}
     <div class="card">
         {% if page.image_path %}
         <div class="card-image">
-            <img src="{{ page.image_path | relative_url }}" alt="{% if page.alt %}{{ page.alt }}{% endif %}">
+            <img src="{{ page.image_path | relative_url }}" alt="{{ page.alt | default: page.title }}">
         </div>
         {% endif %}
 

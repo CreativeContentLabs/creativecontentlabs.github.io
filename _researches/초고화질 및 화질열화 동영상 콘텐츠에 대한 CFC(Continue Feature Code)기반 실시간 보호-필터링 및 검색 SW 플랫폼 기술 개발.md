@@ -2,8 +2,8 @@
 title: 초고화질 및 화질열화 동영상 콘텐츠에 대한 CFC(Continue Feature Code)기반 실시간 보호-필터링 및 검색 SW 플랫폼 기술 개발
 excerpt: 2016.6.24~ 2018.6.23 초고화질 및 화질열화 동영상 콘텐츠에 대한 CFC(Continue Feature Code)기반 실시간 보호-필터링 및 검색 SW 플랫폼 기술 개발, 중소기업청
 image_path: /assets/img/researches/초고화질 및 화질열화 동영상 콘텐츠에 대한 CFC(Continue Feature Code)기반 실시간 보호-필터링 및 검색 SW 플랫폼 기술 개발/image.png
-start: 2016.6.24
-end: 2018.6.23
+start: 2016-06-24
+end: 2018-06-23
 ---
 
 ## 연구목표

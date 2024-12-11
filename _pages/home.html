@@ -60,7 +60,7 @@ header:
 
 <!-- 두 리스트를 합쳐서 표시 -->
 {% assign sorted_pages = ongoing_pages | concat: other_pages %}
-{% include gallery-view.html title='Main Researches' pages=sorted_pages url='/researches/' limit=3 %}
+{% include gallery-view.html title='Main Researches' pages=sorted_pages url='/researches/' limit=6 %}
 
 {% assign sorted_pages = site.board | sort: "date" | reverse %}
-{% include gallery-view.html title='Board' pages=sorted_pages url='/board/' limit=3 %}
+{% include gallery-view.html title='Board' pages=sorted_pages url='/board/' limit=6 %}

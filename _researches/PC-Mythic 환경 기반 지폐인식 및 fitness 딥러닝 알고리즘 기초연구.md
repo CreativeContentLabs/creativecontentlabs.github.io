@@ -27,5 +27,5 @@ ongoing: true
 (Jetson Nano & PC-Mythic)
 
 
-![](/assets/img/researches/PC-Mythic 환경 기반 지폐인식 및 fitness 딥러닝 알고리즘 기초연구/image.png)
+![](assets/img/researches/메모리 기반 세그멘테이션 네트워크를 활용한 지폐 정사 판단 시스템(MemSeg)/메모리 기반 세그멘테이션 네트워크를 활용한 지폐 정사 판단 시스템(MemSeg).png)
  

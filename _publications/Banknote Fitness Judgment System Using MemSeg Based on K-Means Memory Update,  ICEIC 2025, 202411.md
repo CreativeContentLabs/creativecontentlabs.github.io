@@ -1,7 +1,7 @@
 ---
 title :  'Banknote Fitness Judgment System Using MemSeg Based on K-Means Memory Update, 
-ICEIC 2025, 202411'
+ICEIC 2025, 202501'
 doi : 
-date: 2024-11-12
+date: 2025-01-21
 category: paper
 ---

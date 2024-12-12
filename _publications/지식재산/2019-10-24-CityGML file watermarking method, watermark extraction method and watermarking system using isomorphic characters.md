@@ -1,5 +1,5 @@
 ---
-title: 동형문자를 이용한 ＣｉｔｙＧＭＬ 파일 워터마킹 방법, 워터마크 추출 방법 및 워터마킹 시스템 CityGML file watermarking method, watermark extraction method and watermarking system using isomorphic characters
+title: 동형문자를 이용한 ＣｉｔｙＧＭＬ 파일 워터마킹 방법, 워터마크 추출 방법 및 워터마킹 시스템 (CityGML file watermarking method, watermark extraction method and watermarking system using isomorphic characters)
 doi: https://doi.org/10.8080/1020190132804
 date: 2019-10-24
 category: patent

@@ -7,8 +7,12 @@ permalink: /patents/
 <div class="feature__wrapper">
     <ul>
         <!-- csv columns: Status,Type,Name,Author,Journal,DOI,Date -->
-        {% assign publications = site.data.publications | where: 'Type', '지식재산' | sort: 'Date' %}
-        {% for row in publications | where: 'Status', '조사 완료' %}
+
+        {% assign all_publications = site.data.publications %}
+        {% assign patent_data = all_publications | where: 'Type', '지식재산' %}
+        {% assign filtered_publications = patent_data | where: 'Status', '조사 완료' | sort: 'Date' %}
+
+        {% for row in filtered_publications %}
             {% include publication-list-item.html
                 doi=row.DOI
                 title=row.Name

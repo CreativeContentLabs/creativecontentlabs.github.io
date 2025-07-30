@@ -7,16 +7,59 @@ header:
     overlay_filter: "0.5"
     overlay_image: /assets/img/banner.png
 ---
+<style>
+    .tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
 
-<p><b>상명대학교 크리에이티브 콘텐츠 랩 연구소에 오신 것을 환영합니다.</b></p>
-<p>Welcome to Creative Contents Labs.</p>
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 180px; /* 툴팁 박스 너비 */
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* 텍스트 위로 툴팁 표시 */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+}
 
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+</style>
+<p><b>상명대학교 크리에이티브 콘텐츠 랩 연구소(CClabs)에 오신 것을 환영합니다.</b></p>
+<p>
+    저희 CClabs은 신호 및 이미지 처리와 딥러닝을 중심으로 인공지능 연구를 활발히 진행하고 있으며, 최근 엣지보드 기반의 딥러닝 기술 개발 연구에 중점을 두고 있습니다. 또한 다양한 산업과 협업하여 AI기술을 실제 응용으로 발전시키고, 학문적 기여와 실용적 성과를 동시에 추구하고 있습니다. <br>
+    저희 연구실에 관심이 있는 학생들은 이력서와 함께 
+    <span class="tooltip">
+        <a href="mailto:jungsoft97@smu.ac.kr">정대식 교수님의 이메일</a>
+        <span class="tooltip-text">jungsoft97@smu.ac.kr</span>
+    </span>
+    로 지원해주시기 바랍니다.
+</p>
+
+
+<hr/>
 <!-- more -->
+<!--research-->
+{% assign ongoing_pages = site.researches | where: "ongoing", true %}
+<!-- {% assign other_pages = site.researches | where: "ongoing", false %} -->
 
-{% assign pages = site.news | sort: "date" | reverse %}
-{% include gallery-view.html title='News' pages=pages url='/news/' limit=3 %}
+<!-- 진행 중인 항목을 start 순으로 정렬 -->
+{% assign ongoing_pages = ongoing_pages | sort: "start" | reverse %}
 
-{% assign pages = site.researches | sort: "start" | reverse %}
-{% include gallery-view.html title='Researches' pages=pages url='/researches/' limit=3 %}
+<!-- 두 리스트를 합쳐서 표시 -->
+{% assign sorted_pages = ongoing_pages | concat: other_pages %}
+{% include gallery-view.html title='Main Researches' pages=sorted_pages url='/researches/' limit=6 %}
 
-{% include publications.html limit=10 more=true %}
+{% assign sorted_pages = site.board | sort: "date" | reverse %}
+{% include gallery-view.html title='Board' pages=sorted_pages url='/board/' limit=6 %}

@@ -2,6 +2,9 @@
 title: 지능정보사회와 AI 윤리= Intelligent information society and AI ethics
 doi: https://doi.org/10.978.8989383/956
 published: false
+date: 2021-02-26
+category: publish
+
 ---
 
 <!--

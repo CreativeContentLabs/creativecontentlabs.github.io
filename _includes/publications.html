@@ -1,38 +1,138 @@
-{% assign title = 'Publications' %}
-{% assign pages = site.publications | sort: "date" | reverse %}
-{% assign url = '/publications/' %}
-
-<h1 style="position: relative;">
-    {{ title }}
-    <span style="font-size: 0.7em; font-weight: normal; opacity: 0.7;">({{ pages.size }})</span>
-    {% if include.more %}
-        <p style="position: absolute; top: 0; right: 0; font-size: 0.8em;">
-            <a href="{{ url | relative_url }}" class="btn">... {{ site.data.ui-text[site.locale].more_label | default: "More" }}</a>
-        </p>
-    {% endif %}
-</h1>
-
-<div class="feature__wrapper">
-    <ul>
-        {% for page in pages | limit: include.limit | default: pages.size %}
-        <li>
-            <div>
-                {% if page.doi %}
-                <a href="{{ page.doi }}" target="_blank" style="color: inherit; text-decoration: underline;">{{ page.title }}</a>
-                {% else %}
-                {{ page.title }}
-                {% endif %}
-            </div>
-            {% if page.content %}
-            <div style="opacity: 0.5;">
-                {{ page.content }}
-            </div>
-            {% endif %}
-        </li>
+{% assign grouped_by_category = site.publications | group_by: "category" %}
+<div class="publications-filter" style="display: flex; justify-content: flex-end; gap: 10px;">
+    <label for="category-select"></label>
+    <select id="category-select">
+        <option value="all">All</option>
+        <option value="year">Yearly</option>
+        {% for category_group in grouped_by_category %}
+        <option value="{{ category_group.name | downcase }}">{{ category_group.name }}</option>
         {% endfor %}
+    </select>
 
-        {% if pages.size > include.limit %}
-        <li>...</li>
-        {% endif %}
-    </ul>
+    <label for="filter-select"></label>
+    <select id="filter-select" disabled>
+        <!-- Options will be populated based on category selection -->
+    </select>
 </div>
+
+<div id="publications-list">
+    <div class="publications">
+        {% for category_group in grouped_by_category %}
+        {% assign sorted_items = category_group.items | sort: "date" | reverse %}
+        <div class="category-group" data-category="{{ category_group.name | downcase }}">
+            <h2>{{ category_group.name }}</h2> <!-- 카테고리 제목 -->
+
+            {% assign grouped_by_year = sorted_items | group_by_exp: "item", "item.date | date: '%Y'" %}
+
+            {% for year_group in grouped_by_year %}
+            <div class="year-group" data-year="{{ year_group.name }}">
+                <h3>{{ year_group.name }}</h3> <!-- 연도 제목 -->
+
+                <ul>
+                    {% for publication in year_group.items %}
+                    <li data-type="{{ category_group.name | downcase }}">
+                        <a href="{{ publication.doi | default: '#' }}" target="_blank" style="color: black;">{{ publication.title }}</a>
+                        <div style="opacity: 0.5;">{{ publication.excerpt | default: publication.content }}</div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const categorySelect = document.getElementById("category-select");
+        const filterSelect = document.getElementById("filter-select");
+
+        // Event listener for category select box
+        categorySelect.addEventListener("change", function () {
+            const selectedCategory = categorySelect.value;
+
+            // Reset the filter select box
+            filterSelect.innerHTML = "<option value='all'>All</option>";
+            filterSelect.disabled = false;
+
+            if (selectedCategory === "year") {
+                const years = new Set();
+                document.querySelectorAll(".year-group").forEach(group => {
+                    years.add(group.dataset.year);
+                });
+                years.forEach(year => {
+                    const option = document.createElement("option");
+                    option.value = year;
+                    option.textContent = year;
+                    filterSelect.appendChild(option);
+                });
+            } else {
+                const years = new Set();
+                document.querySelectorAll(`.category-group[data-category="${selectedCategory}"] .year-group`).forEach(group => {
+                    years.add(group.dataset.year);
+                });
+                years.forEach(year => {
+                    const option = document.createElement("option");
+                    option.value = year;
+                    option.textContent = year;
+                    filterSelect.appendChild(option);
+                });
+            }
+
+            filterPublications(selectedCategory, filterSelect.value);
+        });
+
+        // Event listener for filter select box
+        filterSelect.addEventListener("change", function () {
+            filterPublications(categorySelect.value, filterSelect.value);
+        });
+
+        function filterPublications(category, filter) {
+            document.querySelectorAll(".category-group").forEach(group => {
+                group.style.display = "none"; // Hide all categories initially
+
+                if (category === "year") {
+                    group.querySelectorAll(".year-group").forEach(yearGroup => {
+                        yearGroup.style.display = (filter === "all" || yearGroup.dataset.year === filter) ? "" : "none";
+                    });
+                    group.style.display = ""; // Show the category group if it contains visible years
+                } else if (category === "all" || group.dataset.category === category) {
+                    group.style.display = ""; // Show the category group
+
+                    group.querySelectorAll(".year-group").forEach(yearGroup => {
+                        yearGroup.style.display = "none"; // Hide all years initially
+
+                        yearGroup.querySelectorAll("li[data-type]").forEach(item => {
+                            if (item.dataset.type === category || category === "all") {
+                                yearGroup.style.display = (filter === "all" || yearGroup.dataset.year === filter) ? "" : "none";
+                                item.style.display = (filter === "all" || yearGroup.dataset.year === filter) ? "" : "none";
+                            }
+                        });
+                    });
+                }
+            });
+        }
+    });
+</script>
+
+<style>
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .publications-filter {
+        margin-bottom: 20px;
+    }
+
+    .publications-filter label {
+        margin-right: 5px;
+    }
+</style>

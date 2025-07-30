@@ -1,6 +1,10 @@
 ---
 title: 특징점과 워터마크를 이용한 혼합음원의 자동 색인과 저작권 관리 시스템 및 방법(System and method for auto indexing and copyright management of mix music using feature point and watermark)
 doi: https://doi.org/10.8080/1020160012376
+date: 2016-02-01
+category: patent
+
+
 ---
 
 <!--

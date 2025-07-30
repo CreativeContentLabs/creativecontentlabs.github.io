@@ -2,8 +2,8 @@
 title: Location Mapping 기반 스마트 영상 콘텐츠 생성 및 서비스 기술 개발
 excerpt: 2015.6.1~2018.3.31 Location Mapping 기반 스마트 영상 콘텐츠 생성 및 서비스 기술 개발, 문화체육관광부
 image_path: /assets/img/researches/Location Mapping 기반 스마트 영상 콘텐츠 생성 및 서비스 기술 개발/image.png
-start: 2015.6.1
-end: 2018.3.31
+start: 2015-6-1
+end: 2018.3-31
 ---
 
 ## 연구목표

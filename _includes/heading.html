@@ -1,0 +1,13 @@
+<h1 style="position: relative;">
+    {{ include.title }}
+
+    {% if include.count %}
+    <span style="font-size: 0.7em; font-weight: normal; opacity: 0.7;">({{ include.count }})</span>
+    {% endif %}
+
+    {% if include.url %}
+        <p style="position: absolute; top: 0; right: 0; font-size: 0.8em;">
+            <a href="{{ include.url | relative_url }}" class="btn">... {{ site.data.ui-text[site.locale].more_label | default: "More" }}</a>
+        </p>
+    {% endif %}
+</h1>

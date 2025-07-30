@@ -2,29 +2,59 @@
 permalink: /people/
 layout: single
 ---
+<style>
+    /* 카테고리 Select Box */
+#category-select {
+    font-size: 14px;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+}
 
+label {
+    font-size: 14px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+</style>
 
 <h1>2024년도 CCLabs 활동 구성원</h1>
 
-{% include people/list-header.html content='교수 (2명)' %}
-{% include people/list-item.html
-    image_url='https://aiot.smu.ac.kr/_attach/image/2018/08/thumb_FgPYHUTnMZkpatWVbIDM.jpg'
-    name_ko='김종원'
-    name_en='Jongweon Kim'
-    affilation='Dept. of Electronics Engineering Sangmyung University'
-    email='jwkim@smu.ac.kr'
-    interests='신호처리'
-%}
-{% include people/list-item.html
-    image_url='https://ca.slack-edge.com/T057X8DNU8P-U057X8QUCLX-93b2ee16fc41-512'
-    name_ko='정대식'
-    name_en='Dae Sik Jeong'
-    affilation='Assistant Professor<br>National Center of Excellence in Software<br>Faculty of SW Convergence<br>College of Convergence Engineering<br>Sangmyung University, Seoul, Republic of Korea'
-    email='jungsoft97@smu.ac.kr'
-    interests='Pattern Recognition(Banknote Recognition, AD Tech), Image Processing, Biometrics (Iris, Face, fingerprint, etc), BigData&Cloud(AWS, ElasticSearch), network pharmacology,EdgeAI Device, Agricultural Automation'
-%}
+<!-- 카테고리 선택 박스 -->
+<div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
 
-{% include people/list-header.html content='전임연구교수' %}
+    <select id="category-select" onchange="filterCategory()" style="padding: 5px; border-radius: 5px;">
+        <option value="all">전체</option>
+        <option value="professor">교수</option>
+        <option value="researcher">연구원</option>
+        <option value="alumni">졸업연구원</option>
+    </select>
+</div>
+
+<!-- 카테고리별 구성원 -->
+<div id="people-container">
+    <!-- 교수 -->
+    <div class="category professor">
+        <h2>교수</h2>
+        {% include people/list-item.html
+            image_url='https://aiot.smu.ac.kr/_attach/image/2018/08/thumb_FgPYHUTnMZkpatWVbIDM.jpg'
+            name_ko='김종원'
+            name_en='Jongweon Kim'
+            affilation='Dept. of Electronics Engineering Sangmyung University'
+            email='jwkim@smu.ac.kr'
+            interests='신호처리'
+        %}
+        {% include people/list-item.html
+            image_url='https://ca.slack-edge.com/T057X8DNU8P-U057X8QUCLX-93b2ee16fc41-512'
+            name_ko='정대식'
+            name_en='DaeSik Jeong'
+            affilation='Assistant Professor<br>National Center of Excellence in Software<br>Faculty of SW Convergence<br>College of Convergence Engineering<br>Sangmyung University, Seoul, Republic of Korea'
+            email='jungsoft97@smu.ac.kr'
+            interests='Pattern Recognition(Banknote Recognition, AD Tech), Image Processing, Biometrics (Iris, Face, fingerprint, etc), BigData&Cloud(AWS, ElasticSearch), network pharmacology,EdgeAI Device, Agricultural Automation'
+        %}
+        {% include people/list-header.html content='전임연구교수' %}
 {% include people/list-item.html
     image_url='/assets/img/people/양연경.jpg'
     name_ko='양연경'
@@ -45,140 +75,152 @@ layout: single
 {% include people/list-item.html
     name_ko='김용배'
 %}
+    </div>
+
+<!-- 석사 -->
+<div class="category researcher">
+    <h2>석사재학생(3명)</h2>
+    {% include people/list-item.html
+        image_url='/assets/img/people/배희재.png'
+        name_ko='배희재'
+        name_en='HuiJae Bae'
+        affilation='상명대학교 컴퓨터과학과 석사과정 (1학년 2학기)'
+        email='baehj100@gmail.com'
+        interests='컴퓨터비전, 패턴인식'
+        current_researches='YOLO기반 엣지보드 내 홍채인식 알고리즘 개발<br>FRU 및 감정 분석 서비스 개발'
+    %}
+    {% include people/list-item.html
+        image_url='/assets/img/people/윤은수.jpg'
+        name_ko='윤은수'
+        name_en='Eunsu Yun'
+        affilation='상명대학교 컴퓨터과학과 석사과정 (1학년 2학기)'
+        email='hkhk0331@gmail.com'
+        interests='컴퓨터비전'
+        current_researches='FRU 및 감정 분석 서비스 개발<br>YOLO기반 엣지보드 내 홍채인식 알고리즘 개발'
+    %}
+    {% include people/list-item.html
+        image_url='/assets/img/people/강재하.png'
+        name_ko='강재하'
+        name_en='Jaeha Kang'
+        affilation='상명대학교 컴퓨터과학과 석사과정 (1학년 2학기)'
+        email='jhkang3457@gmail.com'
+        interests='딥러닝'
+        current_researches='네트워크 약리학'
+    %}
+</div>
+
+<!-- 학사 -->
+<div class="category researcher">
+    <h2>학부연구생(3명)</h2>
+    {% include people/list-item.html
+        image_url='https://ca.slack-edge.com/T057X8DNU8P-U058W8B1J77-dbd064c93395-512'
+        name_ko='전경민'
+        name_en='KyungMin Jeon'
+        affilation='상명대학교 지적재산권전공 학사과정 (4학년 2학기)'
+        email='wjsrudals69@naver.com'
+        interests='머신러닝, 데이터 엔지니어링'
+        current_researches='인공지능 기반 광고비 예측 알고리즘'
+    %}
+    {% include people/list-item.html
+        image_url='/assets/img/people/default.png'
+        name_ko='박선균'
+        name_en=' SeonKyun Park'
+        affilation='상명대학교 컴퓨터과학과 학사과정 (2학년 2학기)'
+        email='qkrtjsrbs315@gmail.com'
+        interests='컴퓨터비전, 백엔드'
+        current_researches='FRU 및 감정 분석 서비스 개발<br>YOLO기반 엣지보드 내 홍채인식 알고리즘 개발'
+    %}
+    {% include people/list-item.html
+        image_url='/assets/img/people/default.png'
+        name_ko='조현서'
+        affilation='강남대학교 소프트웨어전공 학사과정 (4학년 1학기)'
+        email='johyunseo020416@gmail.com'
+        interests='머신러닝, 데이터 엔지니어링'
+        current_researches='인공지능 기반 광고비 예측 알고리즘'
+    %}
+</div>
 
 
-{% include people/list-header.html content='석사재학생 (3명)' %}
-{% include people/list-item.html
-    image_url='/assets/img/people/배희재.png'
-    name_ko='배희재'
-    name_en='Hee-Jae Bae'
-    affilation='상명대학교 컴퓨터과학과 석사과정 (1학년 1학기)'
-    email='baehj100@gmail.com'
-    interests='컴퓨터비전, 패턴인식'
-    current_researches='메모리 기반 세그멘테이션 네트워크를 활용한 지폐 정사 판단 시스템<br>YOLO기반 엣지보드 내 홍채인식 알고리즘 개발'
-%}
-{% include people/list-item.html
-    image_url='/assets/img/people/윤은수.jpg'
-    name_ko='윤은수'
-    name_en='Eunsu Yun'
-    affilation='상명대학교 컴퓨터과학과 석사과정 (1학년 1학기)'
-    email='hkhk0331@gmail.com'
-    interests='컴퓨터비전'
-    current_researches='엣지디바이스 기반 지폐인식(권종 분류)<br>세금계산서 자동 분류 시스템'
-%}
-{% include people/list-item.html
-    image_url='/assets/img/people/강재하.png'
-    name_ko='강재하'
-    affilation='상명대학교 컴퓨터과학과 석사과정 (1학년 1학기)'
-    email='jhkang3457@gmail.com'
-    interests='딥러닝'
-    current_researches='네트워크 약리학'
-%}
-
-
-{% include people/list-header.html content='학부재학생 (3명)' %}
-{% include people/list-item.html
-    image_url='https://ca.slack-edge.com/T057X8DNU8P-U058W8B1J77-dbd064c93395-512'
-    name_ko='전경민'
-    email='wjsrudals69@naver.com'
-    affilation='상명대학교 지적재산권전공 학사과정 (4학년 1학기)'
-    interests='머신러닝'
-    current_researches='인공지능 기반 광고비 예측 알고리즘'
-%}
-{% include people/list-item.html
-    image_url='/assets/img/people/박제영.png'
-    name_ko='박제영'
-    email='qufqja72@gmail.com'
-    affilation='상명대학교 융합전자공학전공 학사과정 (3학년 1학기)'
-    interests='컴퓨터비전, 영상처리'
-    current_researches='엣지디바이스 기반 지폐인식(권종 분류)<br>엣지디바이스 기반 열화상 people counting'
-%}
-{% include people/list-item.html
-    image_url='/assets/img/people/김연후.png'
-    name_ko='김연후'
-    email='dusgn36688@gmail.com'
-    affilation='상명대학교 컴퓨터과학과 학사과정 (3학년 1학기)'
-    interests='컴퓨터비전'
-    current_researches='엣지디바이스 기반 지폐인식(권종 분류)<br>엣지디바이스 기반 열화상 people counting'
-%}
-{% include people/list-item.html
-    image_url='/assets/img/people/default.png'
-    name_ko='박선균'
-    email='qkrtjsrbs315@gmail.com'
-    affilation='상명대학교 컴퓨터과학과 학사과정 (2학년 1학기)'
-    interests='컴퓨터비전, 백엔드'
-    current_researches='YOLO기반 엣지보드 내 홍채인식 알고리즘 개발<br>엣지디바이스 기반 열화상 people counting'
-%}
-
+    <!-- 졸업연구원 -->
+    <div class="category alumni">
+        <p>2015. 5. 23. 부터 지금까지 CCLabs의 구성원이었던 동문입니다.</p>
+        
+        {% include people/list-header.html content='박사졸업생' %}
+        {% include people/list-item.html
+            image_url='/assets/img/people/김예진.jpg'
+            name_ko='김예진'
+            name_en='Ruichen Jin'
+            affilation='아몽솔루션 기업부설연구소 연구소장'
+            email='jinruichen@cclabs.kr'
+        %}
+        {% include people/list-item.html
+            image_url='/assets/img/people/김훈.jpg'
+            name_ko='김훈'
+            affilation='연변대학교 컴퓨터학과 부교수'
+            email='xunjin@ybu.edu.cn'
+            interests='디지털 이미지, 오디오, 비디오 등 멀티미디어 저작권보호를 위한 워터마킹, 콘텐츠 특징분석, 정보보안 등 기술의 연구개발을 진행함과 동시에, 패턴인식, 뉴럴 네트워크, 데이터 마이닝 등 인공지능 기술의 연구개발에도 활발히 참여하고 있습니다.'
+        %}
+        {% include people/list-item.html
+            image_url='/assets/img/people/홍일우.jpg'
+            name_ko='홍일우'
+            name_en='Yiyu Hong'
+            affilation='2018.10~현재, 책임연구원, (주)아론티어'
+            interests='Deep Learning<br>Medical Image Analysis<br>Image Object Detection, Image Segmentation<br>Protein Structure Prediction, Protein Property Prediction'
+        %}
+        {% include people/list-item.html
+            image_url='/assets/img/people/강대유.jpg'
+            name_ko='강대유'
+            name_en='Jiang Dayou'
+            affilation='(2020/07 ~ 지금까지) 안후이 재경대학교 (Anhui University of Finance and Economics), 경영 과학 및 공학 학교, 컴퓨터 과학 기술 학과, 전임교사<br>(2021/09 ~ 지금까지) 안후이 과학 기술 대학교（Anhui Science & Technology University), 정보 및 네트워크 공학 학교, 컴퓨터학과, 외부 교사<br>(2023/01~지금까지) Ceyear Technologies Co., Ltd. & 허페이공업대학교 (Hefei University of Technology), 박사후작업장<br>(직위) 강사'
+            email='ybdxgxy13529@163.com'
+            interests='멀티미디어 정보 처리, 빅 데이터 분석'
+        %}
+        
+        
+        {% include people/list-header.html content='석사졸업생' %}
+        {% include people/list-item.html
+            image_url='/assets/img/people/조정석.jpg'
+            name_ko='조정석'
+            affilation='정보통신산업진흥원 원장실'
+            interests='인공지능, 데이터분석, 기술사업화 등'
+        %}
+        {% include people/list-item.html
+            name_ko='홍다정'
+        %}
+        
+        
+        {% include people/list-header.html content='석사수료생' %}
+        {% include people/list-item.html
+            name_ko='김한준'
+        %}
+        {% include people/list-item.html
+            name_ko='한성준'
+        %}
+    </div>
+</div>
 
 <br>
 <br>
 <br>
-<h1>2023년도 이전 CCLabs 구성원</h1>
-<p>2015. 5. 23. 부터 지금까지 CCLabs의 구성원이었던 동문입니다.</p>
-
-{% include people/list-header.html content='박사졸업생' %}
-{% include people/list-item.html
-    image_url='/assets/img/people/김예진.jpg'
-    name_ko='김예진'
-    name_en='Ruichen Jin'
-    affilation='아몽솔루션 기업부설연구소 연구소장'
-    email='jinruichen@cclabs.kr'
-%}
-{% include people/list-item.html
-    image_url='/assets/img/people/김훈.jpg'
-    name_ko='김훈'
-    affilation='연변대학교 컴퓨터학과 부교수'
-    email='xunjin@ybu.edu.cn'
-    interests='디지털 이미지, 오디오, 비디오 등 멀티미디어 저작권보호를 위한 워터마킹, 콘텐츠 특징분석, 정보보안 등 기술의 연구개발을 진행함과 동시에, 패턴인식, 뉴럴 네트워크, 데이터 마이닝 등 인공지능 기술의 연구개발에도 활발히 참여하고 있습니다.'
-%}
-{% include people/list-item.html
-    image_url='/assets/img/people/홍일우.jpg'
-    name_ko='홍일우'
-    name_en='Yiyu Hong'
-    affilation='2018.10~현재, 책임연구원, (주)아론티어'
-    interests='Deep Learning<br>Medical Image Analysis<br>Image Object Detection, Image Segmentation<br>Protein Structure Prediction, Protein Property Prediction'
-%}
-{% include people/list-item.html
-    image_url='/assets/img/people/강대유.jpg'
-    name_ko='강대유'
-    name_en='Jiang Dayou'
-    affilation='(2020/07 ~ 지금까지) 안후이 재경대학교 (Anhui University of Finance and Economics), 경영 과학 및 공학 학교, 컴퓨터 과학 기술 학과, 전임교사<br>(2021/09 ~ 지금까지) 안후이 과학 기술 대학교（Anhui Science & Technology University), 정보 및 네트워크 공학 학교, 컴퓨터학과, 외부 교사<br>(2023/01~지금까지) Ceyear Technologies Co., Ltd. & 허페이공업대학교 (Hefei University of Technology), 박사후작업장<br>(직위) 강사'
-    email='ybdxgxy13529@163.com'
-    interests='멀티미디어 정보 처리, 빅 데이터 분석'
-%}
-
-
-{% include people/list-header.html content='석사졸업생' %}
-{% include people/list-item.html
-    image_url='/assets/img/people/조정석.jpg'
-    name_ko='조정석'
-    affilation='정보통신산업진흥원 원장실'
-    interests='인공지능, 데이터분석, 기술사업화 등'
-%}
-{% include people/list-item.html
-    name_ko='홍다정'
-%}
-
-
-{% include people/list-header.html content='석사수료생' %}
-{% include people/list-item.html
-    name_ko='김한준'
-%}
-{% include people/list-item.html
-    name_ko='한성준'
-%}
-
-
-<br>
-<br>
-<br>
+<hr>
 <h1>디지털저작권보호연구소(CPRI)</h1>
 
 <p>디지털저작권보호연구소(CPRI)는 크리에이티브 콘텐츠 랩 연구소가 창설되기 이전(2018. 4. 24.)까지 존재하였던 상명대학교의 부설연구기관으로, 크리에이티브 콘텐츠 랩 연구소 활동의 기반이 된 많은 연구와 연구원들을 배출하였습니다.</p>
 
-<p></p>
 
-<!-- {% include people/list-header.html content='1대 연구소장' %}
-{% include people/list-header.html content='2대 연구소장' %}
-{% include people/list-header.html content='졸업생' %} -->
+<script>
+    function filterCategory() {
+        const selectedCategory = document.getElementById("category-select").value;
+        const categories = document.querySelectorAll(".category");
+
+        categories.forEach((category) => {
+            if (selectedCategory === "all") {
+                category.style.display = "block"; // 전체 표시
+            } else if (category.classList.contains(selectedCategory)) {
+                category.style.display = "block"; // 선택된 카테고리만 표시
+            } else {
+                category.style.display = "none"; // 다른 카테고리는 숨김
+            }
+        });
+    }
+</script>

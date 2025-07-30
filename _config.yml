@@ -29,7 +29,7 @@ twitter_username: null
 github_username: CreativeContentLabs
 
 # Build settings
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+remote_theme: "mmistakes/minimal-mistakes@4.19.3"
 plugins:
     - jekyll-feed
     - jekyll-remote-theme

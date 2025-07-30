@@ -12,7 +12,9 @@
 <!-- 연구 프로젝트 목록 -->
 <div id="research-container">
     {% assign ongoing_projects = site.researches | where: "end", "진행중" | sort: "start" | reverse %}
-    {% assign completed_projects = site.researches | where_exp: "item", "item.end != '진행중'" | sort: "end" |  reverse %}
+<!--     {% assign completed_projects = site.researches | where_exp: "item", "item.end != '진행중'" | sort: "end" |  reverse %}
+ -->
+    {% assign completed_projects = site.researches | where_exp: "item", "item.end contains '진행중' == false" | sort: "end" | reverse %}
 
     <!-- 진행중 프로젝트 -->
     <div class="research-group ongoing">

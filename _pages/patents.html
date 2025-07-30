@@ -1,13 +1,13 @@
 ---
-permalink: /publications/
+permalink: /patents/
 ---
 
-<h1>Publications</h1>
+<h1>지식 재산</h1>
 
 <div class="feature__wrapper">
     <ul>
         <!-- csv columns: Status,Type,Name,Author,Journal,DOI,Date -->
-        {% assign publications = site.data.publications | where: 'Type', 'Publications' | sort: 'Date' %}
+        {% assign publications = site.data.publications | where: 'Type', '지식재산' | sort: 'Date' %}
         {% for row in publications | where: 'Status', '조사 완료' %}
             {% include publication-list-item.html
                 doi=row.DOI

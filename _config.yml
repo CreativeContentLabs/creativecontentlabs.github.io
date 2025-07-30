@@ -24,7 +24,7 @@ email: your-email@example.com # TODO
 description: >- # this means to ignore newlines until "baseurl:"
     No content
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://creativecontentlabs.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: null
 github_username: CreativeContentLabs
 

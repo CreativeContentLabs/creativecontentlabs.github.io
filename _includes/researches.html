@@ -1,3 +1,7 @@
+---
+permalink: /researches/
+---
+
 <h1>연구 프로젝트</h1>
 
 <!-- 필터링 Select Box -->
@@ -11,23 +15,37 @@
 
 <!-- 연구 프로젝트 목록 -->
 <div id="research-container">
+    <!-- 진행중 프로젝트 정렬 -->
     {% assign ongoing_projects = site.researches | where: "end", "진행중" | sort: "start" | reverse %}
-<!--     {% assign completed_projects = site.researches | where_exp: "item", "item.end != '진행중'" | sort: "end" |  reverse %}
- -->
-    {% assign completed_projects = site.researches | where_exp: "item", "item.end contains '진행중' == false" | sort: "end" | reverse %}
+
+    <!-- 완료된 프로젝트 수동 필터링 -->
+    {% assign sorted_researches = site.researches | sort: "end" | reverse %}
+    {% capture completed %}
+        {% for project in sorted_researches %}
+            {% if project.end != "진행중" %}
+                <li class="research-item" data-status="completed">
+                    <a href="{{ project.url | relative_url }}">
+                        <strong>{{ project.title }}</strong> <br>
+                        <span>기간: {{ project.start }} ~ {{ project.end }}</span> <br>
+                        <span>{{ project.excerpt }}</span>
+                    </a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    {% endcapture %}
 
     <!-- 진행중 프로젝트 -->
     <div class="research-group ongoing">
         <h2 class="group-title">진행중</h2>
         <ul>
             {% for project in ongoing_projects %}
-            <li class="research-item" data-status="ongoing">
-                <a href="{{ project.url | relative_url }}">
-                    <strong>{{ project.title }}</strong> <br>
-                    <span>기간: {{ project.start }} ~ {{ project.end }}</span> <br>
-                    <span>{{ project.excerpt }}</span>
-                </a>
-            </li>
+                <li class="research-item" data-status="ongoing">
+                    <a href="{{ project.url | relative_url }}">
+                        <strong>{{ project.title }}</strong> <br>
+                        <span>기간: {{ project.start }} ~ {{ project.end }}</span> <br>
+                        <span>{{ project.excerpt }}</span>
+                    </a>
+                </li>
             {% endfor %}
         </ul>
     </div>
@@ -36,15 +54,7 @@
     <div class="research-group completed" style="display: none;">
         <h2 class="group-title">완료됨</h2>
         <ul>
-            {% for project in completed_projects %}
-            <li class="research-item" data-status="completed">
-                <a href="{{ project.url | relative_url }}">
-                    <strong>{{ project.title }}</strong> <br>
-                    <span>기간: {{ project.start }} ~ {{ project.end }}</span> <br>
-                    <span>{{ project.excerpt }}</span>
-                </a>
-            </li>
-            {% endfor %}
+            {{ completed }}
         </ul>
     </div>
 </div>
@@ -85,7 +95,7 @@
     .research-item > a {
         color: black;
         text-decoration: none;
-        display: block; /* Block으로 처리해 li 전체가 클릭 가능 */
+        display: block;
         padding: 10px;
         border-bottom: 1px solid #ddd;
     }
